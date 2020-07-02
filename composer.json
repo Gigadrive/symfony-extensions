@@ -1,0 +1,39 @@
+{
+	"name": "gigadrive/symfony-extensions",
+	"version": "0.1.0",
+	"description": "A bundle with Symfony 5 utilities by Gigadrive.",
+	"minimum-stability": "stable",
+	"license": "SEE LICENSE IN LICENSE",
+	"keywords": ["Symfony", "Extension", "Basic", "Essentials", "Gigadrive"],
+	"type": "symfony-bundle",
+	"authors": [
+		{
+			"name": "Mehdi Baaboura",
+			"email": "mbaaboura@gigadrivegroup.com"
+		}
+	],
+	"homepage": "https://gitlab.com/Gigadrive/symfony-extensions",
+	"readme": "README.md",
+	"require": {
+		"php": "^7.2",
+		"symfony/framework-bundle": "~5.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Gigadrive\\Bundle\\SymfonyExtensionsBundle\\": ""
+		},
+		"exclude-from-classmap": [
+			"/Tests/"
+		]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Gigadrive\\Bundle\\SymfonyExtensionsBundle\\Tests\\": "Tests"
+		}
+	},
+	"config": {
+		"platform": {
+			"php": "7.2.5"
+		}
+	}
+}
