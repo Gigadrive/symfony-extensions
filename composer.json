@@ -23,15 +23,15 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Gigadrive\\Bundle\\SymfonyExtensionsBundle\\": ""
+			"Gigadrive\\Bundle\\SymfonyExtensionsBundle\\": "src/"
 		},
 		"exclude-from-classmap": [
-			"/Tests/"
+			"/src/Tests/"
 		]
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Gigadrive\\Bundle\\SymfonyExtensionsBundle\\Tests\\": "Tests"
+			"Gigadrive\\Bundle\\SymfonyExtensionsBundle\\Tests\\": "src/Tests"
 		}
 	},
 	"config": {
