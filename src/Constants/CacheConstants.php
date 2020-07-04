@@ -17,7 +17,7 @@
  * along with this program. If not, see <https://gnu.org/licenses/>
  */
 
-namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Cache;
+namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Constants;
 
 class CacheConstants {
 	/**
