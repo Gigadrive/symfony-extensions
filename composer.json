@@ -3,8 +3,14 @@
 	"version": "0.1.0",
 	"description": "A bundle with Symfony 5 utilities by Gigadrive.",
 	"minimum-stability": "stable",
-	"license": "SEE LICENSE IN LICENSE",
-	"keywords": ["Symfony", "Extension", "Basic", "Essentials", "Gigadrive"],
+	"license": "GPL-3.0-only",
+	"keywords": [
+		"Symfony",
+		"Extension",
+		"Basic",
+		"Essentials",
+		"Gigadrive"
+	],
 	"type": "symfony-bundle",
 	"authors": [
 		{
