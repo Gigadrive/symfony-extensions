@@ -3,6 +3,6 @@ services:
         autowire: true
         autoconfigure: true
 
-    Gigadrive\:
+    Gigadrive\Bundle\SymfonyExtensionsBundle\:
         resource: '../../*'
         exclude: '../../{DependencyInjection,Constants,Entity,Migrations,Tests,Kernel.php,GigadriveSymfonyExtensionsBundle.php}'
