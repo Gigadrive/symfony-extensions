@@ -19,11 +19,11 @@
 
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Controller;
 
-use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\GigadriveGeneralService;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Exception\Form\FormParameterNotFoundException;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Exception\Form\FormParameterTooLongException;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Exception\Form\FormParameterTooShortException;
+use Gigadrive\Bundle\SymfonyExtensionsBundle\Service\GigadriveGeneralService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 

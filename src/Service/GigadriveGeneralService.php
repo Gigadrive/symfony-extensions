@@ -17,7 +17,7 @@
  * along with this program. If not, see <https://gnu.org/licenses/>
  */
 
-namespace Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection;
+namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;

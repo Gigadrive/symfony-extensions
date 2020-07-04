@@ -19,7 +19,9 @@
 
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection;
 
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class GigadriveSymfonyExtensionsExtension extends Extension {
@@ -28,5 +30,18 @@ class GigadriveSymfonyExtensionsExtension extends Extension {
 			new Configuration($container->getParameter("kernel.debug")),
 			$configs
 		);
+
+		$this->addAnnotatedClassesToCompile([]);
+
+		$configFiles = ["serives.yaml"];
+
+		$loader = new YamlFileLoader(
+			$container,
+			new FileLocator(__DIR__ . "/../Resources/config")
+		);
+
+		foreach ($configFiles as $configFile) {
+			$loader->load($configFile);
+		}
 	}
 }
