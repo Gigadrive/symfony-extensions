@@ -33,7 +33,7 @@ class GigadriveSymfonyExtensionsExtension extends Extension {
 
 		$this->addAnnotatedClassesToCompile([]);
 
-		$configFiles = ["serives.yaml"];
+		$configFiles = ["services.yaml"];
 
 		$loader = new YamlFileLoader(
 			$container,
