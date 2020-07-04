@@ -4,5 +4,5 @@ services:
         autoconfigure: true
 
     Gigadrive\:
-        resource: '../*'
-        exclude: '../{DependencyInjection,Constants,Entity,Migrations,Tests,Kernel.php,GigadriveSymfonyExtensionsBundle.php}'
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,Constants,Entity,Migrations,Tests,Kernel.php,GigadriveSymfonyExtensionsBundle.php}'
