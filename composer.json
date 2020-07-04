@@ -19,7 +19,8 @@
 		"symfony/framework-bundle": "~5.0",
 		"symfony/orm-pack": "^1.0",
 		"doctrine/annotations": "^1.10",
-		"symfony/yaml": "^5.1"
+		"symfony/yaml": "^5.1",
+		"symfony/security-csrf": "^5.1"
 	},
 	"autoload": {
 		"psr-4": {

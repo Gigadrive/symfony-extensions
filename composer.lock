@@ -4,7 +4,7 @@
 		"Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
 		"This file is @generated automatically"
 	],
-	"content-hash": "d9dc71b3e0ee9435636481bb2543e517",
+	"content-hash": "f7fc80de3f7017ca471a7a99b40ed638",
 	"packages": [
 		{
 			"name": "doctrine/annotations",
@@ -1351,16 +1351,16 @@
 			"dist": {
 				"type": "zip",
 				"url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
-                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+				"reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=5.3.0"
+			},
+			"type": "library",
+			"extra": {
+				"branch-alias": {
+					"dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
@@ -1713,16 +1713,16 @@
                 "exclude-from-classmap": [
                     "/Tests/"
                 ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
+				"MIT"
+			],
+			"authors": [
+				{
+					"name": "Fabien Potencier",
+					"email": "fabien@symfony.com"
+				},
 				{
 					"name": "Symfony Community",
 					"homepage": "https://symfony.com/contributors"
@@ -1822,16 +1822,16 @@
 			"dist": {
 				"type": "zip",
 				"url": "https://api.github.com/repos/symfony/dependency-injection/zipball/6508423eded583fc07e88a0172803e1a62f0310c",
-                "reference": "6508423eded583fc07e88a0172803e1a62f0310c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "psr/container": "^1.0",
-                "symfony/deprecation-contracts": "^2.1",
-                "symfony/polyfill-php80": "^1.15",
-                "symfony/service-contracts": "^1.1.6|^2"
-            },
+				"reference": "6508423eded583fc07e88a0172803e1a62f0310c",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=7.2.5",
+				"psr/container": "^1.0",
+				"symfony/deprecation-contracts": "^2.1",
+				"symfony/polyfill-php80": "^1.15",
+				"symfony/service-contracts": "^1.1.6|^2"
+			},
             "conflict": {
                 "symfony/config": "<5.1",
                 "symfony/finder": "<4.4",
@@ -1913,16 +1913,16 @@
                 "files": [
                     "function.php"
                 ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
+				"MIT"
+			],
+			"authors": [
+				{
+					"name": "Nicolas Grekas",
+					"email": "p@tchwork.com"
+				},
 				{
 					"name": "Symfony Community",
 					"homepage": "https://symfony.com/contributors"
@@ -2042,16 +2042,16 @@
 			"dist": {
 				"type": "zip",
 				"url": "https://api.github.com/repos/symfony/error-handler/zipball/7d0b927b9d3dc41d7d46cda38cbfcd20cdcbb896",
-                "reference": "7d0b927b9d3dc41d7d46cda38cbfcd20cdcbb896",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "psr/log": "^1.0",
-                "symfony/polyfill-php80": "^1.15",
-                "symfony/var-dumper": "^4.4|^5.0"
-            },
-            "require-dev": {
+				"reference": "7d0b927b9d3dc41d7d46cda38cbfcd20cdcbb896",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=7.2.5",
+				"psr/log": "^1.0",
+				"symfony/polyfill-php80": "^1.15",
+				"symfony/var-dumper": "^4.4|^5.0"
+			},
+			"require-dev": {
                 "symfony/deprecation-contracts": "^2.1",
                 "symfony/http-kernel": "^4.4|^5.0",
                 "symfony/serializer": "^4.4|^5.0"
@@ -2591,16 +2591,16 @@
                 "exclude-from-classmap": [
                     "/Tests/"
                 ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
+				"MIT"
+			],
+			"authors": [
+				{
+					"name": "Fabien Potencier",
+					"email": "fabien@symfony.com"
+				},
 				{
 					"name": "Symfony Community",
 					"homepage": "https://symfony.com/contributors"
@@ -2648,16 +2648,16 @@
 			"dist": {
 				"type": "zip",
 				"url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/2edd75b8b35d62fd3eeabba73b26b8f1f60ce13d",
-                "reference": "2edd75b8b35d62fd3eeabba73b26b8f1f60ce13d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "suggest": {
-                "ext-ctype": "For best performance"
-            },
-            "type": "library",
+				"reference": "2edd75b8b35d62fd3eeabba73b26b8f1f60ce13d",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=5.3.3"
+			},
+			"suggest": {
+				"ext-ctype": "For best performance"
+			},
+			"type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.17-dev"
@@ -2680,16 +2680,16 @@
                 "MIT"
             ],
             "authors": [
-                {
-                    "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for ctype functions",
+				{
+					"name": "Gert de Pagter",
+					"email": "BackEndTea@gmail.com"
+				},
+				{
+					"name": "Symfony Community",
+					"homepage": "https://symfony.com/contributors"
+				}
+			],
+			"description": "Symfony polyfill for ctype functions",
 			"homepage": "https://symfony.com",
 			"keywords": [
 				"compatibility",
@@ -2841,16 +2841,16 @@
 			"dist": {
 				"type": "zip",
 				"url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7110338d81ce1cbc3e273136e4574663627037a7",
-                "reference": "7110338d81ce1cbc3e273136e4574663627037a7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "suggest": {
-                "ext-mbstring": "For best performance"
-            },
-            "type": "library",
+				"reference": "7110338d81ce1cbc3e273136e4574663627037a7",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=5.3.3"
+			},
+			"suggest": {
+				"ext-mbstring": "For best performance"
+			},
+			"type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.17-dev"
@@ -3090,26 +3090,160 @@
                 }
             ],
             "description": "Symfony Routing Component",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "router",
-                "routing",
-                "uri",
-                "url"
-            ],
-            "time": "2020-06-10T11:49:58+00:00"
-        },
-        {
-            "name": "symfony/service-contracts",
-            "version": "v2.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "66a8f0957a3ca54e4f724e49028ab19d75a8918b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/66a8f0957a3ca54e4f724e49028ab19d75a8918b",
+			"homepage": "https://symfony.com",
+			"keywords": [
+				"router",
+				"routing",
+				"uri",
+				"url"
+			],
+			"time": "2020-06-10T11:49:58+00:00"
+		},
+		{
+			"name": "symfony/security-core",
+			"version": "v5.1.2",
+			"source": {
+				"type": "git",
+				"url": "https://github.com/symfony/security-core.git",
+				"reference": "7414e45f720dd81879bd9a74f152ec92e91d36b6"
+			},
+			"dist": {
+				"type": "zip",
+				"url": "https://api.github.com/repos/symfony/security-core/zipball/7414e45f720dd81879bd9a74f152ec92e91d36b6",
+				"reference": "7414e45f720dd81879bd9a74f152ec92e91d36b6",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=7.2.5",
+				"symfony/deprecation-contracts": "^2.1",
+				"symfony/event-dispatcher-contracts": "^1.1|^2",
+				"symfony/polyfill-php80": "^1.15",
+				"symfony/service-contracts": "^1.1.6|^2"
+			},
+			"conflict": {
+				"symfony/event-dispatcher": "<4.4",
+				"symfony/ldap": "<4.4",
+				"symfony/security-guard": "<4.4"
+			},
+			"require-dev": {
+				"psr/container": "^1.0",
+				"psr/log": "~1.0",
+				"symfony/event-dispatcher": "^4.4|^5.0",
+				"symfony/expression-language": "^4.4|^5.0",
+				"symfony/http-foundation": "^4.4|^5.0",
+				"symfony/ldap": "^4.4|^5.0",
+				"symfony/validator": "^4.4|^5.0"
+			},
+			"suggest": {
+				"psr/container-implementation": "To instantiate the Security class",
+				"symfony/event-dispatcher": "",
+				"symfony/expression-language": "For using the expression voter",
+				"symfony/http-foundation": "",
+				"symfony/ldap": "For using LDAP integration",
+				"symfony/validator": "For using the user password constraint"
+			},
+			"type": "library",
+			"extra": {
+				"branch-alias": {
+					"dev-master": "5.1-dev"
+				}
+			},
+			"autoload": {
+				"psr-4": {
+					"Symfony\\Component\\Security\\Core\\": ""
+				},
+				"exclude-from-classmap": [
+					"/Tests/"
+				]
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
+				"MIT"
+			],
+			"authors": [
+				{
+					"name": "Fabien Potencier",
+					"email": "fabien@symfony.com"
+				},
+				{
+					"name": "Symfony Community",
+					"homepage": "https://symfony.com/contributors"
+				}
+			],
+			"description": "Symfony Security Component - Core Library",
+			"homepage": "https://symfony.com",
+			"time": "2020-05-30T21:52:37+00:00"
+		},
+		{
+			"name": "symfony/security-csrf",
+			"version": "v5.1.2",
+			"source": {
+				"type": "git",
+				"url": "https://github.com/symfony/security-csrf.git",
+				"reference": "962323e4db4458d731d5006f14019a22a2f84b06"
+			},
+			"dist": {
+				"type": "zip",
+				"url": "https://api.github.com/repos/symfony/security-csrf/zipball/962323e4db4458d731d5006f14019a22a2f84b06",
+				"reference": "962323e4db4458d731d5006f14019a22a2f84b06",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=7.2.5",
+				"symfony/security-core": "^4.4|^5.0"
+			},
+			"conflict": {
+				"symfony/http-foundation": "<4.4"
+			},
+			"require-dev": {
+				"symfony/http-foundation": "^4.4|^5.0"
+			},
+			"suggest": {
+				"symfony/http-foundation": "For using the class SessionTokenStorage."
+			},
+			"type": "library",
+			"extra": {
+				"branch-alias": {
+					"dev-master": "5.1-dev"
+				}
+			},
+			"autoload": {
+				"psr-4": {
+					"Symfony\\Component\\Security\\Csrf\\": ""
+				},
+				"exclude-from-classmap": [
+					"/Tests/"
+				]
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
+				"MIT"
+			],
+			"authors": [
+				{
+					"name": "Fabien Potencier",
+					"email": "fabien@symfony.com"
+				},
+				{
+					"name": "Symfony Community",
+					"homepage": "https://symfony.com/contributors"
+				}
+			],
+			"description": "Symfony Security Component - CSRF Library",
+			"homepage": "https://symfony.com",
+			"time": "2020-05-20T17:43:50+00:00"
+		},
+		{
+			"name": "symfony/service-contracts",
+			"version": "v2.1.2",
+			"source": {
+				"type": "git",
+				"url": "https://github.com/symfony/service-contracts.git",
+				"reference": "66a8f0957a3ca54e4f724e49028ab19d75a8918b"
+			},
+			"dist": {
+				"type": "zip",
+				"url": "https://api.github.com/repos/symfony/service-contracts/zipball/66a8f0957a3ca54e4f724e49028ab19d75a8918b",
                 "reference": "66a8f0957a3ca54e4f724e49028ab19d75a8918b",
                 "shasum": ""
             },
@@ -3138,16 +3272,16 @@
             "authors": [
                 {
                     "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Generic abstractions related to writing services",
-            "homepage": "https://symfony.com",
-            "keywords": [
+					"email": "p@tchwork.com"
+				},
+				{
+					"name": "Symfony Community",
+					"homepage": "https://symfony.com/contributors"
+				}
+			],
+			"description": "Generic abstractions related to writing services",
+			"homepage": "https://symfony.com",
+			"keywords": [
 				"abstractions",
 				"contracts",
 				"decoupling",
@@ -3289,16 +3423,16 @@
 			"dist": {
 				"type": "zip",
 				"url": "https://api.github.com/repos/symfony/var-dumper/zipball/46a942903059b0b05e601f00eb64179e05578c0f",
-                "reference": "46a942903059b0b05e601f00eb64179e05578c0f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-mbstring": "~1.0",
-                "symfony/polyfill-php80": "^1.15"
-            },
-            "conflict": {
-                "phpunit/phpunit": "<5.4.3",
+				"reference": "46a942903059b0b05e601f00eb64179e05578c0f",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=7.2.5",
+				"symfony/polyfill-mbstring": "~1.0",
+				"symfony/polyfill-php80": "^1.15"
+			},
+			"conflict": {
+				"phpunit/phpunit": "<5.4.3",
                 "symfony/console": "<4.4"
             },
             "require-dev": {
@@ -3394,16 +3528,16 @@
                 "MIT"
             ],
             "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "A blend of var_export() + serialize() to turn any serializable data structure to plain PHP code",
+				{
+					"name": "Nicolas Grekas",
+					"email": "p@tchwork.com"
+				},
+				{
+					"name": "Symfony Community",
+					"homepage": "https://symfony.com/contributors"
+				}
+			],
+			"description": "A blend of var_export() + serialize() to turn any serializable data structure to plain PHP code",
 			"homepage": "https://symfony.com",
 			"keywords": [
 				"clone",
@@ -3592,16 +3726,16 @@
 			"time": "2018-04-25T15:33:34+00:00"
 		}
 	],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": {
-        "php": "^7.2"
-    },
-    "platform-dev": [],
+	"packages-dev": [],
+	"aliases": [],
+	"minimum-stability": "stable",
+	"stability-flags": [],
+	"prefer-stable": false,
+	"prefer-lowest": false,
+	"platform": {
+		"php": "^7.2"
+	},
+	"platform-dev": [],
     "platform-overrides": {
         "php": "7.2.5"
     }
