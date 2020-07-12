@@ -4,7 +4,7 @@
 		"Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
 		"This file is @generated automatically"
 	],
-	"content-hash": "db9b048010eee008e0561a7de67a2de5",
+	"content-hash": "53194fc1065e343f3638b4f72d89a17e",
 	"packages": [
 		{
 			"name": "composer/installers",
@@ -1348,6 +1348,43 @@
 			"time": "2020-05-29T18:32:49+00:00"
 		},
 		{
+			"name": "neitanod/forceutf8",
+			"version": "v2.0.4",
+			"source": {
+				"type": "git",
+				"url": "https://github.com/neitanod/forceutf8.git",
+				"reference": "c1fbe70bfb5ad41b8ec5785056b0e308b40d4831"
+			},
+			"dist": {
+				"type": "zip",
+				"url": "https://api.github.com/repos/neitanod/forceutf8/zipball/c1fbe70bfb5ad41b8ec5785056b0e308b40d4831",
+				"reference": "c1fbe70bfb5ad41b8ec5785056b0e308b40d4831",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=5.3.0"
+			},
+			"type": "library",
+			"autoload": {
+				"psr-0": {
+					"ForceUTF8\\": "src/"
+				}
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
+				"BSD-3-Clause"
+			],
+			"authors": [
+				{
+					"name": "Sebastián Grignoli",
+					"email": "grignoli@gmail.com"
+				}
+			],
+			"description": "PHP Class Encoding featuring popular Encoding::toUTF8() function --formerly known as forceUTF8()-- that fixes mixed encoded strings.",
+			"homepage": "https://github.com/neitanod/forceutf8",
+			"time": "2019-12-10T14:09:14+00:00"
+		},
+		{
 			"name": "ocramius/package-versions",
 			"version": "1.4.2",
 			"source": {
@@ -1498,16 +1535,16 @@
 			"notification-url": "https://packagist.org/downloads/",
 			"license": [
 				"MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for caching libraries",
-            "keywords": [
-                "cache",
+			],
+			"authors": [
+				{
+					"name": "PHP-FIG",
+					"homepage": "http://www.php-fig.org/"
+				}
+			],
+			"description": "Common interface for caching libraries",
+			"keywords": [
+				"cache",
                 "psr",
                 "psr-6"
             ],
@@ -1820,16 +1857,16 @@
             "require-dev": {
                 "symfony/event-dispatcher": "^4.4|^5.0",
                 "symfony/finder": "^4.4|^5.0",
-                "symfony/messenger": "^4.4|^5.0",
-                "symfony/service-contracts": "^1.1|^2",
-                "symfony/yaml": "^4.4|^5.0"
-            },
-            "suggest": {
-                "symfony/yaml": "To use the yaml reference dumper"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
+				"symfony/messenger": "^4.4|^5.0",
+				"symfony/service-contracts": "^1.1|^2",
+				"symfony/yaml": "^4.4|^5.0"
+			},
+			"suggest": {
+				"symfony/yaml": "To use the yaml reference dumper"
+			},
+			"type": "library",
+			"extra": {
+				"branch-alias": {
 					"dev-master": "5.1-dev"
 				}
 			},
@@ -1969,16 +2006,16 @@
 				"psr/container-implementation": "1.0",
 				"symfony/service-implementation": "1.0"
 			},
-            "require-dev": {
-                "symfony/config": "^5.1",
-                "symfony/expression-language": "^4.4|^5.0",
-                "symfony/yaml": "^4.4|^5.0"
-            },
-            "suggest": {
-                "symfony/config": "",
-                "symfony/expression-language": "For using expressions in service container configuration",
-                "symfony/finder": "For using double-star glob patterns or when GLOB_BRACE portability is required",
-                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+			"require-dev": {
+				"symfony/config": "^5.1",
+				"symfony/expression-language": "^4.4|^5.0",
+				"symfony/yaml": "^4.4|^5.0"
+			},
+			"suggest": {
+				"symfony/config": "",
+				"symfony/expression-language": "For using expressions in service container configuration",
+				"symfony/finder": "For using double-star glob patterns or when GLOB_BRACE portability is required",
+				"symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
                 "symfony/yaml": ""
             },
             "type": "library",
@@ -2020,16 +2057,16 @@
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
                 "reference": "dd99cb3a0aff6cadd2a8d7d7ed72c2161e218337"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/dd99cb3a0aff6cadd2a8d7d7ed72c2161e218337",
-                "reference": "dd99cb3a0aff6cadd2a8d7d7ed72c2161e218337",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
+			},
+			"dist": {
+				"type": "zip",
+				"url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/dd99cb3a0aff6cadd2a8d7d7ed72c2161e218337",
+				"reference": "dd99cb3a0aff6cadd2a8d7d7ed72c2161e218337",
+				"shasum": ""
+			},
+			"require": {
+				"php": ">=7.1"
+			},
 			"type": "library",
 			"extra": {
 				"branch-alias": {
@@ -2189,16 +2226,16 @@
 					"dev-master": "5.1-dev"
 				}
 			},
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\ErrorHandler\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
+			"autoload": {
+				"psr-4": {
+					"Symfony\\Component\\ErrorHandler\\": ""
+				},
+				"exclude-from-classmap": [
+					"/Tests/"
+				]
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
                 "MIT"
             ],
             "authors": [
@@ -2698,16 +2735,16 @@
                 "symfony/translation": "^4.4|^5.0",
                 "symfony/translation-contracts": "^1.1|^2",
                 "twig/twig": "^2.4|^3.0"
-            },
-            "suggest": {
-                "symfony/browser-kit": "",
-                "symfony/config": "",
-                "symfony/console": "",
-                "symfony/dependency-injection": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
+			},
+			"suggest": {
+				"symfony/browser-kit": "",
+				"symfony/config": "",
+				"symfony/console": "",
+				"symfony/dependency-injection": ""
+			},
+			"type": "library",
+			"extra": {
+				"branch-alias": {
 					"dev-master": "5.1-dev"
 				}
 			},
@@ -2795,8 +2832,8 @@
 				}
 			},
 			"autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Ctype\\": ""
+				"psr-4": {
+					"Symfony\\Polyfill\\Ctype\\": ""
 				},
 				"files": [
 					"bootstrap.php"
@@ -2988,16 +3025,16 @@
 				}
 			},
 			"autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
+				"psr-4": {
+					"Symfony\\Polyfill\\Mbstring\\": ""
+				},
+				"files": [
+					"bootstrap.php"
+				]
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
+				"MIT"
             ],
             "authors": [
                 {
@@ -3197,16 +3234,16 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Routing\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
+				},
+				"exclude-from-classmap": [
+					"/Tests/"
+				]
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
+				"MIT"
+			],
+			"authors": [
 				{
 					"name": "Fabien Potencier",
 					"email": "fabien@symfony.com"
@@ -3381,14 +3418,14 @@
 			"suggest": {
 				"symfony/service-implementation": ""
 			},
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
+			"type": "library",
+			"extra": {
+				"branch-alias": {
+					"dev-master": "2.1-dev"
+				}
+			},
+			"autoload": {
+				"psr-4": {
 					"Symfony\\Contracts\\Service\\": ""
 				}
 			},
@@ -3570,16 +3607,16 @@
 			},
 			"suggest": {
 				"ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
-                "ext-intl": "To show region name in time zone dump",
-                "symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
-            },
-            "bin": [
-                "Resources/bin/var-dump-server"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
+				"ext-intl": "To show region name in time zone dump",
+				"symfony/console": "To use the ServerDumpCommand and/or the bin/var-dump-server script"
+			},
+			"bin": [
+				"Resources/bin/var-dump-server"
+			],
+			"type": "library",
+			"extra": {
+				"branch-alias": {
+					"dev-master": "5.1-dev"
                 }
             },
             "autoload": {
@@ -3635,16 +3672,16 @@
             },
             "require-dev": {
                 "symfony/var-dumper": "^4.4.9|^5.0.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\VarExporter\\": ""
+			},
+			"type": "library",
+			"extra": {
+				"branch-alias": {
+					"dev-master": "5.1-dev"
+				}
+			},
+			"autoload": {
+				"psr-4": {
+					"Symfony\\Component\\VarExporter\\": ""
 				},
 				"exclude-from-classmap": [
 					"/Tests/"

@@ -19,6 +19,10 @@
 
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection;
 
+use ForceUTF8\Encoding;
+use function preg_replace;
+use function str_replace;
+
 class Util {
 	/**
 	 * Returns a random string of characters
@@ -45,7 +49,7 @@ class Util {
 	 * @return string
 	 */
 	public static function fixString($string): string {
-		return preg_replace('/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]/', '', str_replace("\xE2\x80\x8B", "", str_replace("\xE2\x80\xAE", "", $string)));
+		return Encoding::fixUTF8(preg_replace('/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]/', '', str_replace("\xE2\x80\x8B", "", str_replace("\xE2\x80\xAE", "", $string))), Encoding::ICONV_TRANSLIT);
 	}
 
 	/**
