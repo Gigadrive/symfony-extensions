@@ -1,0 +1,42 @@
+{% if pagination is defined and pagination is not null %}
+	{% set prev = ("pagination.previous"|trans) == "pagination.previous" ? "Previous" : ("pagination.previous"|trans) %}
+	{% set next = ("pagination.next"|trans) == "pagination.next" ? "Next" : ("pagination.next"|trans) %}
+
+	{% if pagination.lastPage > 1 %}
+		<nav>
+			<ul class="pagination mb-0 justify-content-center">
+				{% if pagination.currentPage > 1 %}
+					<li class="page-item">
+						<a class="page-link" href="{{ currentPath({p: pagination.currentPage-1}) }}">
+							&laquo; {{ prev }}
+						</a>
+					</li>
+				{% endif %}
+
+				{% for page in pagination.pages %}
+					{% if page == "E" or page == pagination.currentPage %}
+						<li class="page-item disabled">
+							<a class="page-link" href="#">
+								{{ page == "E" ? "…" : page }}
+							</a>
+						</li>
+					{% else %}
+						<li class="page-item">
+							<a class="page-link" href="{{ currentPath({p: page}) }}">
+								{{ page }}
+							</a>
+						</li>
+					{% endif %}
+				{% endfor %}
+
+				{% if pagination.currentPage < pagination.lastPage %}
+					<li class="page-item">
+						<a class="page-link" href="{{ currentPath({p: pagination.currentPage+1}) }}">
+							{{ next }} &raquo;
+						</a>
+					</li>
+				{% endif %}
+			</ul>
+		</nav>
+	{% endif %}
+{% endif %}

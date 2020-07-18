@@ -23,6 +23,7 @@ use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Exception\Form\FormParameterNotFoundException;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Exception\Form\FormParameterTooLongException;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Exception\Form\FormParameterTooShortException;
+use Gigadrive\Bundle\SymfonyExtensionsBundle\Service\Database\Pagination\PaginationService;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Service\GigadriveGeneralService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
@@ -33,8 +34,17 @@ class GigadriveController extends AbstractController {
 	 */
 	protected $generalService;
 
-	public function __construct(GigadriveGeneralService $generalService) {
+	/**
+	 * @var PaginationService $pagination
+	 */
+	protected $pagination;
+
+	public function __construct(
+		GigadriveGeneralService $generalService,
+		PaginationService $pagination
+	) {
 		$this->generalService = $generalService;
+		$this->pagination = $pagination;
 	}
 
 	/**
