@@ -7,9 +7,3 @@ services:
         resource: '../../*'
         exclude: '../../{DependencyInjection,Constants,Entity,Migrations,Tests,Kernel.php,GigadriveSymfonyExtensionsBundle.php}'
 
-Doctrine\DBAL\Event\Listeners\SQLSessionInit:
-    class: Doctrine\DBAL\Event\Listeners\SQLSessionInit
-    arguments:
-        - "SET SESSION sql_mode = 'TRADITIONAL'"
-    tags:
-        - { name: doctrine.event_listener, event: postConnect, method: postConnect }
