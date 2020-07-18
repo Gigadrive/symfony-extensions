@@ -19,6 +19,7 @@
 
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Twig;
 
+use DateTime;
 use DateTimeInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
@@ -27,6 +28,9 @@ use Twig\Extension\AbstractExtension;
 use Twig\Markup;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
+use function array_slice;
+use function floor;
+use function implode;
 
 class GigadriveTwigExtension extends AbstractExtension {
 	/**
@@ -107,6 +111,37 @@ class GigadriveTwigExtension extends AbstractExtension {
 				$timestamp = date("Y", $str) . "-" . date("m", $str) . "-" . date("d", $str) . "T" . date("H", $str) . ":" . date("i", $str) . ":" . date("s", $str) . "Z";
 
 				return new Markup('<time class="timeago" datetime="' . $timestamp . '" title="' . date("d", $str) . "." . date("m", $str) . "." . date("Y", $str) . " " . date("H", $str) . ":" . date("i", $str) . ":" . date("s", $str) . ' UTC">' . $timestamp . '</time>', "UTF-8");
+			}),
+
+			// https://stackoverflow.com/a/18602474/4117923
+			new TwigFilter("agoShort", function ($dateTime) {
+				$now = new DateTime;
+				$diff = $now->diff($dateTime);
+
+				$diff->w = floor($diff->d / 7);
+				$diff->d -= $diff->w * 7;
+
+				$string = [
+					'y' => 'y',
+					'm' => 'mo',
+					'w' => 'w',
+					'd' => 'd',
+					'h' => 'h',
+					'i' => 'm',
+					's' => 's',
+				];
+
+				foreach ($string as $k => &$v) {
+					if ($diff->$k) {
+						$v = $diff->$k . $v;
+					} else {
+						unset($string[$k]);
+					}
+				}
+
+				$string = array_slice($string, 0, 1);
+
+				return $string ? implode(', ', $string) : "now";
 			})
 		];
 	}
