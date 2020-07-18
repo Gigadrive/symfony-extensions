@@ -41,7 +41,7 @@ class PaginationService {
 	 */
 	public function paginate($query, int $itemsPerPage = 15): Pagination {
 		$request = $this->generalService->currentRequest;
-		$currentPage = $request ? ($request->query->getInt("p") ?: 1) : 1;
+		$currentPage = $request && $request->attributes->has("_route_params") && isset($request->attributes->get("_route_params")["page"]) ? ((int)$request->attributes->get("_route_params")["page"]) : ($request->query->getInt("p") ?: 1);
 
 		$paginator = (new Paginator($query));
 		$paginator->getQuery()
