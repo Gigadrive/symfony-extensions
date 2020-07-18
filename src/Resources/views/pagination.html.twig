@@ -8,7 +8,7 @@
 			<ul class="pagination mb-0 justify-content-center">
 				{% if pagination.currentPage > 1 %}
 					<li class="page-item">
-						<a class="page-link" href="{{ currentPath({pageParameterName: pagination.currentPage-1}) }}">
+						<a class="page-link" href="{{ currentPath({(pageParameterName): pagination.currentPage-1}) }}">
 							&laquo; {{ prev }}
 						</a>
 					</li>
@@ -23,7 +23,7 @@
 						</li>
 					{% else %}
 						<li class="page-item">
-							<a class="page-link" href="{{ currentPath({pageParameterName: page}) }}">
+							<a class="page-link" href="{{ currentPath({(pageParameterName): page}) }}">
 								{{ page }}
 							</a>
 						</li>
@@ -32,7 +32,7 @@
 
 				{% if pagination.currentPage < pagination.lastPage %}
 					<li class="page-item">
-						<a class="page-link" href="{{ currentPath({pageParameterName: pagination.currentPage+1}) }}">
+						<a class="page-link" href="{{ currentPath({(pageParameterName): pagination.currentPage+1}) }}">
 							{{ next }} &raquo;
 						</a>
 					</li>
