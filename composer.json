@@ -28,7 +28,8 @@
 		"symfony/yaml": "^5.1",
 		"symfony/security-csrf": "^5.1",
 		"composer/installers": "^1.9",
-		"neitanod/forceutf8": "^2.0"
+		"neitanod/forceutf8": "^2.0",
+		"symfony/twig-bundle": "^5.1"
 	},
 	"autoload": {
 		"psr-4": {

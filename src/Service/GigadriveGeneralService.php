@@ -20,8 +20,10 @@
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
+use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class GigadriveGeneralService {
 	/**
@@ -39,13 +41,40 @@ class GigadriveGeneralService {
 	 */
 	public $currentRequest;
 
+	/**
+	 * @var UrlGeneratorInterface $urlGenerator
+	 */
+	public $urlGenerator;
+
 	public function __construct(
 		EntityManagerInterface $entityManager,
-		RequestStack $requestStack
+		RequestStack $requestStack,
+		UrlGeneratorInterface $urlGenerator
 	) {
 		$this->entityManager = $entityManager;
 		$this->requestStack = $requestStack;
+		$this->urlGenerator = $urlGenerator;
 
 		$this->currentRequest = $requestStack->getCurrentRequest();
+	}
+
+	public function currentPath(array $additionalParameters = []): ?string {
+		$currentRequest = $this->currentRequest;
+		if (is_null($currentRequest)) return null;
+
+		$route = $currentRequest->attributes->get('_route');
+		$params = $currentRequest->attributes->get('_route_params');
+
+		return $this->urlGenerator->generate($route, array_merge($params, $currentRequest->query->all(), $additionalParameters));
+	}
+
+	public function currentURL(array $additionalParameters = []): ?string {
+		$currentRequest = $this->currentRequest;
+		if (is_null($currentRequest)) return null;
+
+		$route = $currentRequest->attributes->get('_route');
+		$params = $currentRequest->attributes->get('_route_params');
+
+		return Util::forceSSL($this->urlGenerator->generate($route, array_merge($params, $currentRequest->query->all(), $additionalParameters), UrlGeneratorInterface::ABSOLUTE_URL));
 	}
 }
