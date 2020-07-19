@@ -19,6 +19,7 @@
 
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Service\Database\Pagination;
 
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 use function strval;
 
@@ -33,9 +34,15 @@ class Pagination {
 	 */
 	private $currentPage;
 
-	public function __construct(Paginator $paginator, int $currentPage = 1) {
+	/**
+	 * @var QueryBuilder|null $totalQuery
+	 */
+	private $totalQuery;
+
+	public function __construct(Paginator $paginator, int $currentPage = 1, ?QueryBuilder $totalQuery = null) {
 		$this->paginator = $paginator;
 		$this->currentPage = $currentPage;
+		$this->totalQuery = $totalQuery;
 	}
 
 	/**
@@ -43,6 +50,13 @@ class Pagination {
 	 */
 	public function getDoctrinePaginator(): Paginator {
 		return $this->paginator;
+	}
+
+	/**
+	 * @return QueryBuilder|null
+	 */
+	public function getTotalQuery(): ?QueryBuilder {
+		return $this->totalQuery;
 	}
 
 	/**
@@ -103,13 +117,20 @@ class Pagination {
 	 * @return int
 	 */
 	public function getLastPage(): int {
-		return ceil($this->paginator->count() / $this->paginator->getQuery()->getMaxResults());
+		return ceil($this->getTotal() / $this->paginator->getQuery()->getMaxResults());
 	}
 
 	/**
 	 * @return int
 	 */
 	public function getTotal(): int {
+		if ($this->totalQuery) {
+			return $this->totalQuery
+				->getQuery()
+				->useQueryCache(true)
+				->getSingleScalarResult();
+		}
+
 		return $this->paginator->count();
 	}
 
