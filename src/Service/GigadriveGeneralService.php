@@ -25,6 +25,8 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use function array_key_exists;
+use function array_merge;
 
 class GigadriveGeneralService {
 	/**
@@ -66,23 +68,33 @@ class GigadriveGeneralService {
 		$this->currentRequest = $requestStack->getCurrentRequest();
 	}
 
-	public function currentPath(array $additionalParameters = []): ?string {
+	public function currentPath(array $additionalParameters = [], bool $fixParametersBug = true): ?string {
 		$currentRequest = $this->currentRequest;
 		if (is_null($currentRequest)) return null;
 
 		$route = $currentRequest->attributes->get('_route');
 		$params = $currentRequest->attributes->get('_route_params');
 
-		return $this->urlGenerator->generate($route, array_merge($params, $currentRequest->query->all(), $additionalParameters));
+		$parameters = array_merge($params, $currentRequest->query->all(), $additionalParameters);
+		if ($fixParametersBug && array_key_exists("params", $parameters)) {
+			unset($parameters["params"]);
+		}
+
+		return $this->urlGenerator->generate($route, $parameters);
 	}
 
-	public function currentURL(array $additionalParameters = []): ?string {
+	public function currentURL(array $additionalParameters = [], bool $fixParametersBug = true): ?string {
 		$currentRequest = $this->currentRequest;
 		if (is_null($currentRequest)) return null;
 
 		$route = $currentRequest->attributes->get('_route');
 		$params = $currentRequest->attributes->get('_route_params');
 
-		return Util::forceSSL($this->urlGenerator->generate($route, array_merge($params, $currentRequest->query->all(), $additionalParameters), UrlGeneratorInterface::ABSOLUTE_URL));
+		$parameters = array_merge($params, $currentRequest->query->all(), $additionalParameters);
+		if ($fixParametersBug && array_key_exists("params", $parameters)) {
+			unset($parameters["params"]);
+		}
+
+		return Util::forceSSL($this->urlGenerator->generate($route, $parameters, UrlGeneratorInterface::ABSOLUTE_URL));
 	}
 }
