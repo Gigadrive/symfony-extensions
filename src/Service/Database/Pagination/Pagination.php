@@ -21,6 +21,7 @@ namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Service\Database\Pagination;
 
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use function is_null;
 use function strval;
 
 class Pagination {
@@ -38,6 +39,11 @@ class Pagination {
 	 * @var QueryBuilder|null $totalQuery
 	 */
 	private $totalQuery;
+
+	/**
+	 * @var int|null
+	 */
+	private $total = null;
 
 	public function __construct(Paginator $paginator, int $currentPage = 1, ?QueryBuilder $totalQuery = null) {
 		$this->paginator = $paginator;
@@ -124,14 +130,21 @@ class Pagination {
 	 * @return int
 	 */
 	public function getTotal(): int {
+		if (!is_null($this->total)) {
+			return $this->total;
+		}
+
 		if ($this->totalQuery) {
-			return $this->totalQuery
+			$this->total = $this->totalQuery
 				->getQuery()
 				->useQueryCache(true)
 				->getSingleScalarResult();
+
+			return $this->total;
 		}
 
-		return $this->paginator->count();
+		$this->total = $this->paginator->count();
+		return $this->total;
 	}
 
 	/**
