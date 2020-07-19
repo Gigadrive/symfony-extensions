@@ -21,6 +21,7 @@ namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -46,14 +47,21 @@ class GigadriveGeneralService {
 	 */
 	public $urlGenerator;
 
+	/**
+	 * @var LoggerInterface $logger
+	 */
+	public $logger;
+
 	public function __construct(
 		EntityManagerInterface $entityManager,
 		RequestStack $requestStack,
-		UrlGeneratorInterface $urlGenerator
+		UrlGeneratorInterface $urlGenerator,
+		LoggerInterface $logger
 	) {
 		$this->entityManager = $entityManager;
 		$this->requestStack = $requestStack;
 		$this->urlGenerator = $urlGenerator;
+		$this->logger = $logger;
 
 		$this->currentRequest = $requestStack->getCurrentRequest();
 	}
