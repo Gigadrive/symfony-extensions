@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
@@ -63,6 +63,10 @@ class GigadriveController extends AbstractController {
 
 	public function stringParam(string $key, int $min = 0, int $max = PHP_INT_MAX): ?string {
 		$value = $this->readParameter($key);
+		if (Util::isEmpty($value)) {
+			return null;
+		}
+
 		$length = strlen($value);
 
 		if ($length < $min) {
