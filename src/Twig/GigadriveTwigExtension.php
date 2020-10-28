@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
@@ -31,6 +31,7 @@ use Twig\TwigFunction;
 use function array_slice;
 use function floor;
 use function implode;
+use function strtolower;
 
 class GigadriveTwigExtension extends AbstractExtension {
 	/**
@@ -67,6 +68,39 @@ class GigadriveTwigExtension extends AbstractExtension {
 				$var = $_ENV[$name];
 
 				return !Util::isEmpty($var) ? $var : null;
+			}),
+
+			new TwigFunction("deviceDataToIconClass", function (array $terms) {
+				$icons = [
+					"Xbox" => "xbox",
+					"PlayStation" => "playstation",
+					"Macintosh" => "apple",
+					"iPhone" => "apple",
+					"iPad" => "apple",
+					"iPod" => "apple",
+					"Android" => "android",
+					"BlackBerry" => "blackberry",
+					"Kindle" => "amazon",
+					"Firefox" => "firefox-browser",
+					"Safari" => "safari",
+					"Internet Explorer" => "internet-explorer",
+					"Chrome" => "chrome",
+					"Opera" => "opera",
+					"Edge" => "edge",
+					"Windows" => "windows",
+					"Linux" => "linux",
+					"Ubuntu" => "ubuntu"
+				];
+
+				foreach ($terms as $term) {
+					foreach ($icons as $iconName => $iconClass) {
+						if (Util::contains(strtolower($term), strtolower($iconName))) {
+							return "fab fa-" . $iconClass;
+						}
+					}
+				}
+
+				return "fas fa-globe";
 			}),
 
 			new TwigFunction("linkify", function ($value, $protocols = ["http", "mail"], array $attributes = []): Markup {
