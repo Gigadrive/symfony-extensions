@@ -30,7 +30,8 @@
 		"composer/installers": "^1.9",
 		"neitanod/forceutf8": "^2.0",
 		"symfony/twig-bundle": "^5.1",
-		"gumlet/php-image-resize": "^2.0"
+		"gumlet/php-image-resize": "^2.0",
+		"ext-json": "*"
 	},
 	"autoload": {
 		"psr-4": {

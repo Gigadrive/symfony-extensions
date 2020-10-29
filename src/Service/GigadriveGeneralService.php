@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
@@ -54,16 +54,23 @@ class GigadriveGeneralService {
 	 */
 	public $logger;
 
+	/**
+	 * @var CredentialsService $credentials
+	 */
+	public $credentials;
+
 	public function __construct(
 		EntityManagerInterface $entityManager,
 		RequestStack $requestStack,
 		UrlGeneratorInterface $urlGenerator,
-		LoggerInterface $logger
+		LoggerInterface $logger,
+		CredentialsService $credentials
 	) {
 		$this->entityManager = $entityManager;
 		$this->requestStack = $requestStack;
 		$this->urlGenerator = $urlGenerator;
 		$this->logger = $logger;
+		$this->credentials = $credentials;
 
 		$this->currentRequest = $requestStack->getCurrentRequest();
 	}
