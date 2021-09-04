@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
+ * Copyright (C) 2018-2021 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -80,7 +80,7 @@ class GigadriveGeneralService {
 		if (is_null($currentRequest)) return null;
 
 		$route = $currentRequest->attributes->get('_route');
-		$params = $currentRequest->attributes->get('_route_params');
+		$params = $currentRequest->attributes->get('_route_params') ?: [];
 
 		$parameters = array_merge($params, $currentRequest->query->all(), $additionalParameters);
 		if ($fixParametersBug && array_key_exists("params", $parameters)) {
@@ -95,7 +95,7 @@ class GigadriveGeneralService {
 		if (is_null($currentRequest)) return null;
 
 		$route = $currentRequest->attributes->get('_route');
-		$params = $currentRequest->attributes->get('_route_params');
+		$params = $currentRequest->attributes->get('_route_params') ?: [];
 
 		$parameters = array_merge($params, $currentRequest->query->all(), $additionalParameters);
 		if ($fixParametersBug && array_key_exists("params", $parameters)) {
