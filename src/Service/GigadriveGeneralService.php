@@ -72,7 +72,7 @@ class GigadriveGeneralService {
 		$this->logger = $logger;
 		$this->credentials = $credentials;
 
-		$this->currentRequest = $requestStack->getCurrentRequest();
+		$this->currentRequest = $requestStack->getMasterRequest();
 	}
 
 	public function currentPath(array $additionalParameters = [], bool $fixParametersBug = true): ?string {
