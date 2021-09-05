@@ -27,6 +27,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use function array_key_exists;
 use function array_merge;
+use function method_exists;
 
 class GigadriveGeneralService {
 	/**
@@ -72,7 +73,12 @@ class GigadriveGeneralService {
 		$this->logger = $logger;
 		$this->credentials = $credentials;
 
-		$this->currentRequest = $requestStack->getMasterRequest();
+		// Use getMainRequest when possible to avoid deprecation
+		if (method_exists($requestStack, "getMainRequest")) {
+			$this->currentRequest = $requestStack->getMainRequest();
+		} else {
+			$this->currentRequest = $requestStack->getMasterRequest();
+		}
 	}
 
 	public function currentPath(array $additionalParameters = [], bool $fixParametersBug = true): ?string {
