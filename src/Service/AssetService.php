@@ -1,6 +1,6 @@
 <?php
-/**
- * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
+/*
+ * Copyright (C) 2018-2021 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -70,7 +70,7 @@ class AssetService {
 					$aTime = filemtime($a);
 					$bTime = filemtime($b);
 
-					return $aTime === $bTime ? 0 : $aTime > $bTime ? -1 : 1;
+					return ($aTime === $bTime) ? 0 : (($aTime > $bTime) ? -1 : 1);
 				});
 			}
 
