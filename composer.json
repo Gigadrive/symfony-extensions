@@ -21,7 +21,7 @@
 	"homepage": "https://gitlab.com/Gigadrive/symfony-extensions",
 	"readme": "README.md",
 	"require": {
-		"php": "^7.2",
+		"php": "^7.2 || ^8.0",
 		"symfony/framework-bundle": "~5.0",
 		"symfony/orm-pack": "^1.0",
 		"doctrine/annotations": "^1.10",
