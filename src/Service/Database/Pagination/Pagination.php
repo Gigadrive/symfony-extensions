@@ -1,6 +1,6 @@
 <?php
-/**
- * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
+/*
+ * Copyright (C) 2018-2021 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -45,10 +45,16 @@ class Pagination {
 	 */
 	private $total = null;
 
-	public function __construct(Paginator $paginator, int $currentPage = 1, ?QueryBuilder $totalQuery = null) {
+	/**
+	 * @var int
+	 */
+	private $maxPagesToShow;
+
+	public function __construct(Paginator $paginator, int $currentPage = 1, ?QueryBuilder $totalQuery = null, int $maxPagesToShow = 10) {
 		$this->paginator = $paginator;
 		$this->currentPage = $currentPage;
 		$this->totalQuery = $totalQuery;
+		$this->maxPagesToShow = $maxPagesToShow;
 	}
 
 	/**
@@ -66,6 +72,13 @@ class Pagination {
 	}
 
 	/**
+	 * @return int
+	 */
+	public function getMaxPagesToShow(): int {
+		return $this->maxPagesToShow;
+	}
+
+	/**
 	 * @return string[]
 	 * @see https://github.com/jasongrimes/php-paginator/blob/master/src/JasonGrimes/Paginator.php#L197
 	 */
@@ -73,28 +86,27 @@ class Pagination {
 		$pages = [];
 
 		$numPages = $this->getLastPage();
-		$maxPagesToShow = 10;
 
 		if ($numPages <= 1) {
 			return [];
 		}
 
-		if ($numPages <= $maxPagesToShow) {
+		if ($numPages <= $this->maxPagesToShow) {
 			for ($i = 1; $i <= $numPages; $i++) {
 				$pages[] = strval($i);
 			}
 		} else {
 			// Determine the sliding range, centered around the current page.
-			$numAdjacents = (int)floor(($maxPagesToShow - 3) / 2);
+			$numAdjacents = (int)floor(($this->maxPagesToShow - 3) / 2);
 
 			if ($this->currentPage + $numAdjacents > $numPages) {
-				$slidingStart = $numPages - $maxPagesToShow + 2;
+				$slidingStart = $numPages - $this->maxPagesToShow + 2;
 			} else {
 				$slidingStart = $this->currentPage - $numAdjacents;
 			}
 
 			if ($slidingStart < 2) $slidingStart = 2;
-			$slidingEnd = $slidingStart + $maxPagesToShow - 3;
+			$slidingEnd = $slidingStart + $this->maxPagesToShow - 3;
 			if ($slidingEnd >= $numPages) $slidingEnd = $numPages - 1;
 
 			// Build the list of pages.

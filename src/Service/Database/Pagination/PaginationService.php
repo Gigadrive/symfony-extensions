@@ -1,6 +1,6 @@
 <?php
-/**
- * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
+/*
+ * Copyright (C) 2018-2021 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -37,11 +37,12 @@ class PaginationService {
 	/**
 	 * @param QueryBuilder|Query $query
 	 * @param int $itemsPerPage
+	 * @param int $maxPagesToShow
 	 * @param bool $outputWalkers
 	 * @param QueryBuilder|null $totalQuery
 	 * @return Pagination
 	 */
-	public function paginate($query, int $itemsPerPage = 15, bool $outputWalkers = true, ?QueryBuilder $totalQuery = null): Pagination {
+	public function paginate($query, int $itemsPerPage = 15, int $maxPagesToShow = 10, bool $outputWalkers = true, ?QueryBuilder $totalQuery = null): Pagination {
 		$request = $this->generalService->currentRequest;
 		$currentPage = $request && $request->attributes->has("_route_params") && isset($request->attributes->get("_route_params")["page"]) ? ((int)$request->attributes->get("_route_params")["page"]) : ($request->query->getInt("p") ?: 1);
 
@@ -54,6 +55,6 @@ class PaginationService {
 			->setFirstResult($itemsPerPage * ($currentPage - 1))
 			->setMaxResults($itemsPerPage);
 
-		return new Pagination($paginator, $currentPage, $totalQuery);
+		return new Pagination($paginator, $currentPage, $totalQuery, $maxPagesToShow);
 	}
 }

@@ -1,20 +1,20 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "ccae5be83beed3fdb509e11e49413526",
-    "packages": [
-        {
-            "name": "composer/installers",
-            "version": "v1.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca"
-            },
-            "dist": {
+	"_readme": [
+		"This file locks the dependencies of your project to a known state",
+		"Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+		"This file is @generated automatically"
+	],
+	"content-hash": "546f93f5a395ae1b0efeade094c851c8",
+	"packages": [
+		{
+			"name": "composer/installers",
+			"version": "v1.9.0",
+			"source": {
+				"type": "git",
+				"url": "https://github.com/composer/installers.git",
+				"reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca"
+			},
+			"dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/composer/installers/zipball/b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
                 "reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
@@ -4320,9 +4320,9 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2",
-        "ext-json": "*"
-    },
+		"php": "^7.2 || ^8.0",
+		"ext-json": "*"
+	},
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.2.5"
