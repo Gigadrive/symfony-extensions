@@ -32,7 +32,7 @@ class DescriptionMetaTagEntry extends MetaTagEntry {
 
 	public function __construct(?string $text = null) {
 		if (Util::isEmpty($text)) {
-			$this->text = ($_ENV["DEFAULT_DESCRIPTION"] ?: "");
+			$this->text = ($_ENV["DEFAULT_DESCRIPTION"] ?? "");
 			return;
 		}
 
