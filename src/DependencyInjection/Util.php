@@ -1,6 +1,6 @@
 <?php
-/**
- * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
+/*
+ * Copyright (C) 2018-2021 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,6 +23,11 @@ use ForceUTF8\Encoding;
 use function preg_replace;
 use function str_replace;
 
+/**
+ * @deprecated
+ * @package Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection
+ * @author Mehdi Baaboura <mbaaboura@gigadrivegroup.com>
+ */
 class Util {
 	/**
 	 * Returns a random string of characters
@@ -39,48 +44,6 @@ class Util {
 			$randomString .= $characters[rand(0, $charactersLength - 1)];
 		}
 		return $randomString;
-	}
-
-	/**
-	 * Returns a string that fixes exploits like a zero-width space
-	 *
-	 * @access public
-	 * @param string $string
-	 * @return string
-	 */
-	public static function fixString($string): string {
-		return Encoding::fixUTF8(preg_replace('/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]/', '', str_replace("\xE2\x80\x8B", "", str_replace("\xE2\x80\xAE", "", $string))), Encoding::ICONV_TRANSLIT);
-	}
-
-	/**
-	 * Returns wheter a string or array is empty
-	 *
-	 * @access public
-	 * @param string|array $var
-	 * @return bool
-	 */
-	public static function isEmpty($var): bool {
-		if (is_array($var)) {
-			return count($var) == 0;
-		} else if (is_string($var)) {
-			$var = self::fixString($var);
-
-			return $var == "" || trim($var) == "" || str_replace(" ", "", str_replace(" ", "", $var)) == "" || strlen($var) == 0;
-		} else {
-			return is_null($var) || empty($var);
-		}
-	}
-
-	/**
-	 * Checks whether a string contains another string
-	 *
-	 * @access public
-	 * @param string $string The full string
-	 * @param string $check The substring to be checked
-	 * @return bool
-	 */
-	public static function contains($string, $check): bool {
-		return strpos($string, $check) !== false;
 	}
 
 	/**
@@ -149,27 +112,6 @@ class Util {
 	}
 
 	/**
-	 * Gets whether a string starts with another
-	 *
-	 * @access public
-	 * @param string $string The string in subject
-	 * @param string $start The string to be checked whether it is the start of $string
-	 * @param bool $ignoreCase If true, the case of the strings won't affect the result
-	 * @return bool
-	 */
-	public static function startsWith(string $string, string $start, bool $ignoreCase = false): bool {
-		if (strlen($start) <= strlen($string)) {
-			if ($ignoreCase == true) {
-				return substr($string, 0, strlen($start)) == $start;
-			} else {
-				return strtolower(substr($string, 0, strlen($start))) == strtolower($start);
-			}
-		} else {
-			return false;
-		}
-	}
-
-	/**
 	 * Gets whether a string ends with another
 	 *
 	 * @access public
@@ -220,11 +162,24 @@ class Util {
 	}
 
 	/**
-	 * @param int $number
+	 * Gets whether a string starts with another
+	 *
+	 * @access public
+	 * @param string $string The string in subject
+	 * @param string $start The string to be checked whether it is the start of $string
+	 * @param bool $ignoreCase If true, the case of the strings won't affect the result
 	 * @return bool
 	 */
-	public static function isEven(int $number): bool {
-		return $number % 2 === 0;
+	public static function startsWith(string $string, string $start, bool $ignoreCase = false): bool {
+		if (strlen($start) <= strlen($string)) {
+			if ($ignoreCase == true) {
+				return substr($string, 0, strlen($start)) == $start;
+			} else {
+				return strtolower(substr($string, 0, strlen($start))) == strtolower($start);
+			}
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -233,6 +188,14 @@ class Util {
 	 */
 	public static function isOdd(int $number): bool {
 		return !self::isEven($number);
+	}
+
+	/**
+	 * @param int $number
+	 * @return bool
+	 */
+	public static function isEven(int $number): bool {
+		return $number % 2 === 0;
 	}
 
 	/**
@@ -328,12 +291,54 @@ class Util {
 	}
 
 	/**
+	 * Checks whether a string contains another string
+	 *
+	 * @access public
+	 * @param string $string The full string
+	 * @param string $check The substring to be checked
+	 * @return bool
+	 */
+	public static function contains($string, $check): bool {
+		return strpos($string, $check) !== false;
+	}
+
+	/**
 	 * @param array|string $var
 	 * @param $default
 	 * @return array|string|null
 	 */
 	public static function def($var, $default = null) {
 		return Util::isEmpty($var) ? $default : $var;
+	}
+
+	/**
+	 * Returns wheter a string or array is empty
+	 *
+	 * @access public
+	 * @param string|array $var
+	 * @return bool
+	 */
+	public static function isEmpty($var): bool {
+		if (is_array($var)) {
+			return count($var) == 0;
+		} else if (is_string($var)) {
+			$var = self::fixString($var);
+
+			return $var == "" || trim($var) == "" || str_replace(" ", "", str_replace(" ", "", $var)) == "" || strlen($var) == 0;
+		} else {
+			return is_null($var) || empty($var);
+		}
+	}
+
+	/**
+	 * Returns a string that fixes exploits like a zero-width space
+	 *
+	 * @access public
+	 * @param string $string
+	 * @return string
+	 */
+	public static function fixString($string): string {
+		return Encoding::fixUTF8(preg_replace('/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]/', '', str_replace("\xE2\x80\x8B", "", str_replace("\xE2\x80\xAE", "", $string))), Encoding::ICONV_TRANSLIT);
 	}
 
 	/**

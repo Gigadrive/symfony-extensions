@@ -20,7 +20,6 @@
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -28,6 +27,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use function array_key_exists;
 use function array_merge;
 use function method_exists;
+use function url_force_https;
 
 class GigadriveGeneralService {
 	/**
@@ -62,10 +62,10 @@ class GigadriveGeneralService {
 
 	public function __construct(
 		EntityManagerInterface $entityManager,
-		RequestStack $requestStack,
-		UrlGeneratorInterface $urlGenerator,
-		LoggerInterface $logger,
-		CredentialsService $credentials
+		RequestStack           $requestStack,
+		UrlGeneratorInterface  $urlGenerator,
+		LoggerInterface        $logger,
+		CredentialsService     $credentials
 	) {
 		$this->entityManager = $entityManager;
 		$this->requestStack = $requestStack;
@@ -108,6 +108,6 @@ class GigadriveGeneralService {
 			unset($parameters["params"]);
 		}
 
-		return Util::forceSSL($this->urlGenerator->generate($route, $parameters, UrlGeneratorInterface::ABSOLUTE_URL));
+		return url_force_https($this->urlGenerator->generate($route, $parameters, UrlGeneratorInterface::ABSOLUTE_URL));
 	}
 }

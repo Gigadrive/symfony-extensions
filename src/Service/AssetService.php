@@ -19,10 +19,10 @@
 
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Service;
 
-use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
+use function url_force_https;
 
 class AssetService {
 	/**
@@ -84,7 +84,7 @@ class AssetService {
 			$base = $this->router->getContext()->getBaseUrl();
 
 			$final = $base . "build/" . $fileName;
-			return $forceSSL ? Util::forceSSL($final) : $final;
+			return $forceSSL ? url_force_https($final) : $final;
 		}
 
 		return null;

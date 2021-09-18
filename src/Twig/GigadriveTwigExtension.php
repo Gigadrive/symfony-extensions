@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
+ * Copyright (C) 2018-2021 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -31,6 +31,8 @@ use Twig\TwigFunction;
 use function array_slice;
 use function floor;
 use function implode;
+use function is_empty;
+use function str_contains;
 use function strtolower;
 
 class GigadriveTwigExtension extends AbstractExtension {
@@ -45,7 +47,7 @@ class GigadriveTwigExtension extends AbstractExtension {
 	private $generalService;
 
 	public function __construct(
-		EntityManagerInterface $entityManager,
+		EntityManagerInterface  $entityManager,
 		GigadriveGeneralService $generalService
 	) {
 		$this->entityManager = $entityManager;
@@ -67,7 +69,7 @@ class GigadriveTwigExtension extends AbstractExtension {
 
 				$var = $_ENV[$name];
 
-				return !Util::isEmpty($var) ? $var : null;
+				return !is_empty($var) ? $var : null;
 			}),
 
 			new TwigFunction("deviceDataToIconClass", function (array $terms) {
@@ -94,7 +96,7 @@ class GigadriveTwigExtension extends AbstractExtension {
 
 				foreach ($terms as $term) {
 					foreach ($icons as $iconName => $iconClass) {
-						if (Util::contains(strtolower($term), strtolower($iconName))) {
+						if (str_contains(strtolower($term), strtolower($iconName))) {
 							return "fab fa-" . $iconClass;
 						}
 					}

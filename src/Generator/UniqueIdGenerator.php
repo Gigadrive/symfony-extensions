@@ -1,6 +1,6 @@
 <?php
-/**
- * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
+/*
+ * Copyright (C) 2018-2021 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,14 +21,14 @@ namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Generator;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Id\AbstractIdGenerator;
-use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
+use function random_string;
 
 class UniqueIdGenerator extends AbstractIdGenerator {
 	/**
 	 * {@inheritdoc}
 	 */
 	public function generate(EntityManager $em, $entity) {
-		$id = Util::getRandomString(128);
+		$id = random_string(128);
 
 		if (null !== $em->getRepository(get_class($entity))->findOneBy(["id" => $id])) {
 			$id = $this->generate($em, $entity);

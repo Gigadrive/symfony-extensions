@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright (C) 2018-2020 Gigadrive - All rights reserved.
+ * Copyright (C) 2018-2021 Gigadrive - All rights reserved.
  * https://gigadrivegroup.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,6 @@
 
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\Controller;
 
-use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Exception\Form\FormParameterNotFoundException;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Exception\Form\FormParameterTooLongException;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Exception\Form\FormParameterTooShortException;
@@ -27,6 +26,8 @@ use Gigadrive\Bundle\SymfonyExtensionsBundle\Service\Database\Pagination\Paginat
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Service\GigadriveGeneralService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
+use function is_empty;
+use function str_fix_encoding;
 
 class GigadriveController extends AbstractController {
 	/**
@@ -41,7 +42,7 @@ class GigadriveController extends AbstractController {
 
 	public function __construct(
 		GigadriveGeneralService $generalService,
-		PaginationService $pagination
+		PaginationService       $pagination
 	) {
 		$this->generalService = $generalService;
 		$this->pagination = $pagination;
@@ -63,7 +64,7 @@ class GigadriveController extends AbstractController {
 
 	public function stringParam(string $key, int $min = 0, int $max = PHP_INT_MAX): ?string {
 		$value = $this->readParameter($key);
-		if (Util::isEmpty($value)) {
+		if (is_empty($value)) {
 			return null;
 		}
 
@@ -89,7 +90,7 @@ class GigadriveController extends AbstractController {
 			throw new FormParameterNotFoundException();
 		}
 
-		return Util::fixString($parameterBag->get($key));
+		return str_fix_encoding($parameterBag->get($key));
 	}
 
 	public function readCheckbox(string $key, ?ParameterBag $parameterBag = null, bool $default = false): bool {

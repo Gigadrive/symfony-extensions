@@ -4,7 +4,7 @@
 		"Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
 		"This file is @generated automatically"
 	],
-	"content-hash": "546f93f5a395ae1b0efeade094c851c8",
+	"content-hash": "3db3196d435d9e259040272b44ca6d73",
 	"packages": [
 		{
 			"name": "composer/installers",
@@ -15,16 +15,16 @@
 				"reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca"
 			},
 			"dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
-                "reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
+				"type": "zip",
+				"url": "https://api.github.com/repos/composer/installers/zipball/b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
+				"reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
+				"shasum": ""
+			},
+			"require": {
+				"composer-plugin-api": "^1.0 || ^2.0"
+			},
+			"replace": {
+				"roundcube/plugin-installer": "*",
                 "shama/baton": "*"
             },
             "require-dev": {
@@ -1392,26 +1392,93 @@
                     "email": "jeremy@jeremydorn.com",
                     "homepage": "http://jeremydorn.com/"
                 }
-            ],
-            "description": "a PHP SQL highlighting library",
-            "homepage": "https://github.com/doctrine/sql-formatter/",
-            "keywords": [
-                "highlight",
-                "sql"
-            ],
-            "time": "2020-07-30T16:57:33+00:00"
-        },
-        {
-            "name": "gumlet/php-image-resize",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/gumlet/php-image-resize.git",
-                "reference": "de6dc92d8ddf65e508b088202e5de6f3fb0621a2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/gumlet/php-image-resize/zipball/de6dc92d8ddf65e508b088202e5de6f3fb0621a2",
+			],
+			"description": "a PHP SQL highlighting library",
+			"homepage": "https://github.com/doctrine/sql-formatter/",
+			"keywords": [
+				"highlight",
+				"sql"
+			],
+			"time": "2020-07-30T16:57:33+00:00"
+		},
+		{
+			"name": "gigadrive/php-commons",
+			"version": "1.0.0",
+			"source": {
+				"type": "git",
+				"url": "https://github.com/Gigadrive/php-commons.git",
+				"reference": "30637c50f5991db5cf00e78680764bb6d25a695c"
+			},
+			"dist": {
+				"type": "zip",
+				"url": "https://api.github.com/repos/Gigadrive/php-commons/zipball/30637c50f5991db5cf00e78680764bb6d25a695c",
+				"reference": "30637c50f5991db5cf00e78680764bb6d25a695c",
+				"shasum": ""
+			},
+			"require": {
+				"ext-iconv": "*",
+				"ext-mbstring": "*",
+				"php": "^7.1 || ^8.0"
+			},
+			"require-dev": {
+				"phpunit/phpunit": "^9.5"
+			},
+			"type": "library",
+			"autoload": {
+				"files": [
+					"src/functions/file.php",
+					"src/functions/format.php",
+					"src/functions/html.php",
+					"src/functions/number.php",
+					"src/functions/string.php",
+					"src/functions/system.php",
+					"src/functions/url.php",
+					"src/functions/validation.php"
+				],
+				"psr-4": {
+					"Gigadrive\\PHPCommons\\": "src/"
+				}
+			},
+			"notification-url": "https://packagist.org/downloads/",
+			"license": [
+				"MIT"
+			],
+			"authors": [
+				{
+					"name": "Mehdi Baaboura",
+					"email": "mbaaboura@gigadrivegroup.com"
+				}
+			],
+			"description": "Open-source library used in Gigadrive projects with common PHP utilities",
+			"homepage": "https://github.com/Gigadrive/php-commons",
+			"keywords": [
+				"Gigadrive",
+				"basic",
+				"commons",
+				"essentials",
+				"extension",
+				"functions",
+				"library",
+				"php",
+				"utility"
+			],
+			"support": {
+				"issues": "https://github.com/Gigadrive/php-commons/issues",
+				"source": "https://github.com/Gigadrive/php-commons/tree/v1.0.0"
+			},
+			"time": "2021-09-08T13:13:50+00:00"
+		},
+		{
+			"name": "gumlet/php-image-resize",
+			"version": "2.0.0",
+			"source": {
+				"type": "git",
+				"url": "https://github.com/gumlet/php-image-resize.git",
+				"reference": "de6dc92d8ddf65e508b088202e5de6f3fb0621a2"
+			},
+			"dist": {
+				"type": "zip",
+				"url": "https://api.github.com/repos/gumlet/php-image-resize/zipball/de6dc92d8ddf65e508b088202e5de6f3fb0621a2",
                 "reference": "de6dc92d8ddf65e508b088202e5de6f3fb0621a2",
                 "shasum": ""
             },
@@ -4310,22 +4377,22 @@
                 "zf2"
             ],
             "abandoned": "laminas/laminas-eventmanager",
-            "time": "2018-04-25T15:33:34+00:00"
-        }
-    ],
-    "packages-dev": [],
-    "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
-    "prefer-stable": false,
-    "prefer-lowest": false,
-    "platform": {
+			"time": "2018-04-25T15:33:34+00:00"
+		}
+	],
+	"packages-dev": [],
+	"aliases": [],
+	"minimum-stability": "stable",
+	"stability-flags": [],
+	"prefer-stable": false,
+	"prefer-lowest": false,
+	"platform": {
 		"php": "^7.2 || ^8.0",
 		"ext-json": "*"
 	},
-    "platform-dev": [],
-    "platform-overrides": {
-        "php": "7.2.5"
-    },
-    "plugin-api-version": "2.0.0"
+	"platform-dev": [],
+	"platform-overrides": {
+		"php": "7.2.5"
+	},
+	"plugin-api-version": "2.0.0"
 }

@@ -20,9 +20,10 @@
 namespace Gigadrive\Bundle\SymfonyExtensionsBundle\SEO\Entry;
 
 use Gigadrive\Bundle\SymfonyExtensionsBundle\Constants\SEOConstants;
-use Gigadrive\Bundle\SymfonyExtensionsBundle\DependencyInjection\Util;
 use Gigadrive\Bundle\SymfonyExtensionsBundle\SEO\MetaTagEntry;
+use function is_empty;
 use function sprintf;
+use function str_limit;
 
 class DescriptionMetaTagEntry extends MetaTagEntry {
 	/**
@@ -31,7 +32,7 @@ class DescriptionMetaTagEntry extends MetaTagEntry {
 	private $text;
 
 	public function __construct(?string $text = null) {
-		if (Util::isEmpty($text)) {
+		if (is_empty($text)) {
 			$this->text = ($_ENV["DEFAULT_DESCRIPTION"] ?? "");
 			return;
 		}
@@ -51,7 +52,7 @@ class DescriptionMetaTagEntry extends MetaTagEntry {
 	 * @return DescriptionMetaTagEntry
 	 */
 	public function setText(string $text): self {
-		$this->text = Util::limitString($text, SEOConstants::META_DESCRIPTION_LENGTH, true);
+		$this->text = str_limit($text, SEOConstants::META_DESCRIPTION_LENGTH, true);
 
 		return $this;
 	}
